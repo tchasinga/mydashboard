@@ -9,8 +9,7 @@ const mongoconnection = async () => {
   try {
     await mongoose.connect(urlmongoDB, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 25000, // Optional: Add a timeout for server selection
+      useUnifiedTopology: true, // Optional: Add a timeout for server selection
     });
     console.log("✅ Connected successfully to MongoDB");
   } catch (error) {

@@ -22,7 +22,7 @@ export default function Detailspages() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://dashboard-manager-apis-connection.onrender.com/apis/aply/getbyid/${params.id}`)
+    axios.get(`https://mydashboard-api-backend.onrender.com/apis/aply/getbyid/${params.id}`)
       .then(response => {
         if (response.data) {
           setData(response.data);

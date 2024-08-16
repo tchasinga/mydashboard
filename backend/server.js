@@ -14,6 +14,7 @@ app.use(
     origin: [
      "http://localhost:5173",
       "http://localhost:3000",
+      "https://mydashboard-ui-frontend.onrender.com",
       "https://devservice-six.vercel.app",
        "*",
     ],

@@ -29,7 +29,7 @@ export default function Dashboard() {
   
 
   useEffect(() => {
-    axios.get('https://mydashboard-api-backend.onrender.com/apis/aply/get')
+    axios.get('https://mydashboard-api-backend-side.onrender.com/apis/aply/get')
       .then(response => {
         if (response.data && Array.isArray(response.data.data)) {
           setData(response.data.data);

@@ -11,7 +11,7 @@ export default function Header() {
     const handlerSingout = async() => {
         try {
           dispatch(signOutUserStart());
-          const res = await fetch(`https://mydashboard-api-backend.onrender.com/apis/aply/signout`)
+          const res = await fetch(`https://mydashboard-api-backend-side.onrender.com/apis/aply/signout`)
           const data = await res.json();
       
           if(data.success === false) {

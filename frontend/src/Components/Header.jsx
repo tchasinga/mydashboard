@@ -39,7 +39,7 @@ export default function Header() {
         <div className="flex items-center gap-6">
           {currentUser ? (
             <>
-              <span className="text-white text-lg">{currentUser.user.email}</span>
+              <span className="text-white text-lg">{currentUser.user.username}</span>
               <Link
                 to="/dashboard"
                 className="bg-green-600 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition duration-300"

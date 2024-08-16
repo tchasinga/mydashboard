@@ -1,6 +1,9 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Adding a singup for user to the app...
 export const singup = async (req, res, next) => {
@@ -49,6 +52,7 @@ export const signin = async (req, res, next) => {
       error.status = 401;
       return next(error);
     }
+
     // if all is good, user signed in successfully
     const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",

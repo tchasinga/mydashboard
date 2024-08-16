@@ -5,63 +5,64 @@ import { signOutUserFailure, signOutUserStart, signOutUserSuccess } from "../red
 import { useState } from "react";
 
 export default function Header() {
-  const [isSignOut, setIsSignOut] = useState(false);
+  const [signingOut, setSigningOut] = useState();
   const currentUser = useSelector((state) => state.user?.user?.currentUser);
   const dispatch = useDispatch();
 
-  const handleSignOut = async () => {
+  const handlerSingout = async() => {
     try {
-      setIsSignOut(true);
+      setSigningOut(true)
       dispatch(signOutUserStart());
-      const res = await fetch(`https://mydashboard-api-backend-side.onrender.com/apis/aply/signout`);
+      const res = await fetch(`https://mydashboard-api-backend-side.onrender.com/apis/aply/signout`)
       const data = await res.json();
-
-      if (!data.success) {
+  
+      if(data.success === false) {
         dispatch(signOutUserFailure(data.message));
         return;
       }
       dispatch(signOutUserSuccess(data));
-      setIsSignOut(false);
+      setSigningOut(false)
     } catch (error) {
       console.error(error);
       dispatch(signOutUserFailure(error.message));
     }
-  };
+  }
 
   return (
-    <div className="py-5">
-      <div className="container mx-auto max-w-6xl flex justify-between items-center flex-wrap">
-        <div className="text-xl">
-          <Link to="/">
-            <FaHome />
-          </Link>
-        </div>
+    <header className="py-5 bg-gray-900 shadow-md">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to="/" className="text-2xl text-white flex items-center gap-2">
+          <FaHome />
+          <span>MyDashboard</span>
+        </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           {currentUser ? (
             <>
-              <div className="text-lg underline">{currentUser.email}</div>
-              <Link to="/dashboard" className="cursor-pointer">
-                <div className="text-white bg-green-800 p-2 flex justify-center rounded-2xl w-36 hover:bg-orange-800 transition duration-1000">
-                  Admin Page
-                </div>
-              </Link>
-              <div
-                onClick={handleSignOut}
-                className="text-white bg-green-800 p-2 flex justify-center rounded-2xl w-36 cursor-pointer hover:bg-orange-800 transition duration-1000"
+              <span className="text-white text-lg">{currentUser.user.email}</span>
+              <Link
+                to="/dashboard"
+                className="bg-green-600 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 transition duration-300"
               >
-                {isSignOut ? "Waiting..." : "Sign Out"}
-              </div>
+                Admin Page
+              </Link>
+              <button
+                onClick={handlerSingout}
+                className="bg-red-600 text-white px-4 py-2 rounded-lg shadow hover:bg-red-700 transition duration-300"
+              >
+                {signingOut ? "Signing out..." : "Sign Out"}
+              </button>
             </>
           ) : (
-            <Link to="/signin" className="cursor-pointer">
-              <div className="text-white bg-green-800 p-2 flex justify-center rounded-2xl w-36 hover:bg-orange-800 transition duration-1000">
-                Sign In
-              </div>
+            <Link
+              to="/signin"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition duration-300"
+            >
+              Sign In
             </Link>
           )}
         </div>
       </div>
-    </div>
+    </header>
   );
 }

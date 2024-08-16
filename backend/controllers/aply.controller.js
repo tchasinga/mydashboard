@@ -1,7 +1,9 @@
 import Aply from "../models/aply.model.js";
 import nodemailer from "nodemailer";
 import mjml2html from "mjml";
+import dotenv from "dotenv";
 
+dotenv.config();
 // MJML email template
 const mjmlTemplate = `
 <mjml>
@@ -74,7 +76,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL,
-    pass: process.env.PASSWORD || "ezku kxhc uexi cqbg",
+    pass: process.env.PASSWORD,
   },
 });
 

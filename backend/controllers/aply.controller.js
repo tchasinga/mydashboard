@@ -22,10 +22,10 @@ const mjmlTemplate = `
       <mj-column vertical-align="middle" width="100%">
         <mj-text align="left" color="#ffffff" font-size="22px" font-family="Open Sans, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
           <span style="color:#FEEB35">Hello {{fullName}},</span><br /><br />
-          Welcome to TECHSOL SOFTWARE KENYA.
+          Welcome to DEV-SERVICES.
         </mj-text>
         <mj-text align="left" color="#ffffff" font-size="15px" font-family="Open Sans, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
-          Thank you for choosing TechSol Software Kenya! We're thrilled that you've applied for our services. Your application has been received and we'll get back to you shortly. If you have any questions in the meantime, feel free to reach out to us at <a href="mailto:Kiokoj81@gmail.com" style="color: #FEEB35;">Kiokoj81@gmail.com</a>
+          Thank you for choosing DEV-SERVICES ! We're thrilled that you've applied for our services. Your application has been received and we'll get back to you shortly. If you have any questions in the meantime, feel free to reach out to us at <a href="mailto:tchasingajacques@gmail.com" style="color: #FEEB35;">tchasingajacques@gmail.com</a>
         </mj-text>
         <mj-text align="left" color="#ffffff" font-size="15px" font-family="Open Sans, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
           Thanks,<br />
@@ -75,8 +75,8 @@ const transporter = nodemailer.createTransport({
   secure: true,
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD || 'hmwm csyp vbtw aogr'
+    user: "tchasingajacques@gmail.com",
+    pass: "jetr ilme zxaz fmvl"
   },
 });
 

@@ -25,11 +25,11 @@ const mjmlTemplate = `
           Welcome to DEV-SERVICES.
         </mj-text>
         <mj-text align="left" color="#ffffff" font-size="15px" font-family="Open Sans, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
-          Thank you for choosing DEV-SERVICES ! We're thrilled that you've applied for our services. Your application has been received and we'll get back to you shortly. If you have any questions in the meantime, feel free to reach out to us at <a href="mailto:tchasingajacques@gmail.com" style="color: #FEEB35;">tchasingajacques@gmail.com</a>
+          Thank you for choosing DEV-SERVICES ! We're thrilled that you've applied for our services. Your application has been received and we'll get back to you shortly. If you have any questions in the meantime, feel free to reach out to us at <a href="mailto:miranjatracy@gmail.com" style="color: #FEEB35;">miranjatracy@gmail.com</a>
         </mj-text>
         <mj-text align="left" color="#ffffff" font-size="15px" font-family="Open Sans, Helvetica, Arial, sans-serif" padding-left="25px" padding-right="25px">
           Thanks,<br />
-          The TECHSOL SOFTWARE KENYA Team
+          The DEV-SERVICES Team
         </mj-text>
       </mj-column>
     </mj-section>

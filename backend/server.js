@@ -16,6 +16,7 @@ app.use(
       "http://localhost:3000",
       "https://techsolve-ten.vercel.app",
       "https://dashboard-frontend-q2m3.onrender.com",
+      "https://devservice-six.vercel.app",
        "*",
     ],
     credentials: true,
